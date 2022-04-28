@@ -1,12 +1,8 @@
 const express = require('express');
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    message: `You're on the index api`,
-  });
-});
+app.use('/api/users', userRoutes);
 
 module.exports = app;
